@@ -22,7 +22,7 @@ app.use((err, req, res, next) => {
     message,
   });
 });
-
+app.use(cors());
 app.get("/", async (req, res) => {
   res.status(200).json({
     message: "Hello developers from GFG",

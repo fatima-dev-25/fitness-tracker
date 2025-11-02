@@ -47,7 +47,7 @@ export const UserLogin = async (req, res, next) => {
     }
     console.log(user);
     // Check if password is correct
-    const isPasswordCorrect = await bcrypt.compareSync(password, user.password);
+    const isPasswordCorrect = await bcrypt.compare(password, user.password);
     if (!isPasswordCorrect) {
       return next(createError(403, "Incorrect password"));
     }
